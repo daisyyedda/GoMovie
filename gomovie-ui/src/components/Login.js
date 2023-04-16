@@ -31,7 +31,9 @@ const Login = () => {
         }
 
         fetch(`http://localhost:8080/authenticate`, requestOptions)
-            .then((response) => response.json())
+            .then((response) => 
+              response.json()
+            )
             .then((data) => {
                 if (data.error) {
                     setAlertClassName("alert-danger");

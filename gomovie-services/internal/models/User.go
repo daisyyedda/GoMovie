@@ -25,6 +25,7 @@ func (u *User) PasswordMatches(plainText string) (bool, error) {
 			// invalid password
 			return false, nil
 		default:
+			// something else went wrong
 			return false, err
 		}
 	}

@@ -24,10 +24,10 @@ type application struct {
 }
 
 func main() {
-	// set application config
+	// set app config
 	var app application
 
-	// read from command line
+	// read from cmd line
 	flag.StringVar(&app.DSN, "dsn", "host=localhost port=5432 user=postgres password=postgres dbname=movies sslmode=disable timezone=UTC connect_timeout=5", "Postgres connection string")
 	flag.StringVar(&app.JWTSecret, "jwt-secret", "verysecret", "signing secret")
 	flag.StringVar(&app.JWTIssuer, "jwt-issuer", "example.com", "signing issuer")
@@ -36,7 +36,7 @@ func main() {
 	flag.StringVar(&app.Domain, "domain", "example.com", "domain")
 	flag.Parse()
 
-	// connect to the database
+	// connect to db
 	conn, err := app.connectToDB()
 	if err != nil {
 		log.Fatal(err)
