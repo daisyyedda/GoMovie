@@ -8,9 +8,9 @@ import (
 )
 
 type JSONResponse struct {
-	Error  bool        `json:"error"`
+	Error   bool        `json:"error"`
 	Message string      `json:"message"`
-	Data   interface{} `json:"data.omitempty"`
+	Data    interface{} `json:"data,omitempty"`
 }
 
 func (app *application) writeJSON(w http.ResponseWriter, status int, data interface{}, headers ...http.Header) error {
@@ -50,7 +50,7 @@ func (app *application) readJSON(w http.ResponseWriter, r *http.Request, data in
 
 	err = dec.Decode(&struct{}{})
 	if err != io.EOF {
-		return errors.New("body must only contain a single JSON object")
+		return errors.New("body must only contain a single JSON value")
 	}
 
 	return nil
@@ -63,7 +63,7 @@ func (app *application) errorJSON(w http.ResponseWriter, err error, status ...in
 		statusCode = status[0]
 	}
 
-	var payload JSONResponse 
+	var payload JSONResponse
 	payload.Error = true
 	payload.Message = err.Error()
 
