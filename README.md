@@ -4,4 +4,4 @@ Tech Stack: Docker, Go, GraphQL, PostgreSQL, React.
 
 ## Demo
 
-## How to Run
+## Run It Locally
