@@ -1,1 +1,1 @@
-backend of the application written in Golang
+# GoMovie Backend
