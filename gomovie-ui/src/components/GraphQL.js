@@ -1,11 +1,9 @@
 const GraphQL = () => {
   return(
-    <>
-    <div className="text-center">
+    <div>
       <h2>GraphQL</h2>
       <hr />
     </div>
-    </>
   )
 }
 
