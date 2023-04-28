@@ -4,6 +4,7 @@ import Input from "./form/Input";
 import Select from "./form/Select";
 import TextArea from "./form/TextArea";
 import Checkbox from "./form/Checkbox";
+import Swal from "sweetalert2";
 
 const EditMovie = () => {
   const navigate = useNavigate();
@@ -98,6 +99,76 @@ const EditMovie = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    let errors = [];
+    let required = [
+      { field: movie.title, name: "title" },
+      { field: movie.release_date, name: "release_date" },
+      { field: movie.runtime, name: "runtime" },
+      { field: movie.description, name: "description" },
+      { field: movie.mpaa_rating, name: "mpaa_rating" },
+    ];
+
+    required.forEach(function (obj) {
+      if (obj.field === "") {
+        errors.push(obj.name);
+      }
+    })
+
+    if (movie.genres_array.length === 0) {
+      Swal.fire({
+        title: "Error!",
+        text: "You must select at least one genre.",
+        icon: "error",
+        confirmButtonText: "OK"
+      })
+      errors.push("genres");
+    }
+
+    setErrors(errors);
+
+    if (errors.length > 0) {
+      return false;
+    }
+
+    // passed validation, so save changes
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    headers.append("Authorization", `Bearer` + jwtToken);
+
+    // assume we are adding a new movie
+    let method = "PUT";
+
+    if (movie.id > 0) {
+      method = "PATCH";
+    }
+
+    const requestBody = movie;
+    // we need to convert the values in JSON for release date (to date)
+    // and for runtime to int
+
+    requestBody.release_date = new Date(movie.release_date);
+    requestBody.runtime = parseInt(movie.runtime, 10);
+
+    let requestOptions = {
+      body: JSON.stringify(requestBody),
+      method: method,
+      headers: headers,
+      credentials: "include",
+    }
+
+    fetch(`http://localhost:8080/admin/movies/${movie.id}`, requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error) {
+          console.log(data.error);
+        } else {
+          navigate("/manage-catelogue");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   const handleChange = () => (event) => {
@@ -111,7 +182,7 @@ const EditMovie = () => {
 
   const handleCheck = (event, position) => {
     console.log("handleCheck called")
-    console.log("value in hadleCheck:", event.target.value)
+    console.log("value in handleCheck:", event.target.value)
     console.log("checked is", event.target.checked)
     console.log("position is", position)
 
@@ -135,7 +206,7 @@ const EditMovie = () => {
     <div>
       <h2>Add/Edit Movie</h2>
       <hr />
-      <pre>{JSON.stringify(movie, null, 3)}</pre>
+      {/* <pre>{JSON.stringify(movie, null, 3)}</pre> */}
       <form onSubmit={handleSubmit}>
         <input type="hidden" name="id" value={movie.id} id="id"></input>
         <Input
@@ -206,6 +277,10 @@ const EditMovie = () => {
           )}
           </>
         }
+
+        <hr/>
+
+        <button className="btn btn-primary">Save</button>
       </form>
     </div>
   )
