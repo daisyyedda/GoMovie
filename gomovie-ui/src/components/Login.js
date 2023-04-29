@@ -55,7 +55,7 @@ const Login = () => {
 
     return(
         <div className="col-md-6 offset-md-3">
-            <h2>Login</h2>
+            <h2>Admin Login</h2>
             <hr />
 
             <form onSubmit={handleSubmit}>

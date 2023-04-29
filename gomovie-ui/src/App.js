@@ -89,7 +89,7 @@ function App() {
         
         <div className="col text-end">
           {jwtToken === "" 
-          ? <Link to="/login"><span className="badge bg-success">Login</span></Link>
+          ? <Link to="/login"><span className="badge bg-success">Admin Login</span></Link>
           : <a href ="/login" onClick={logOut}><span className="badge bg-danger">Logout</span></a>
           } 
         </div>
@@ -106,8 +106,8 @@ function App() {
               {jwtToken !== "" && 
                 <>
                 <Link to="/admin/movie/0" className="list-group-item list-group-item-action">Add Movie</Link>
+                <Link to="/graphql" className="list-group-item list-group-item-action">Search Movie</Link>
                 <Link to="/manage-catalogue" className="list-group-item list-group-item-action">Manage Catalogue</Link>
-                <Link to="/graphql" className="list-group-item list-group-item-action">GraphQL</Link>
                 </>
               }
             </div>
