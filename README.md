@@ -7,6 +7,8 @@ Tech Stack: Docker, Go, GraphQL, PostgreSQL, React.
 ## Run It Locally
 The assumption is you have Go and Node installed on your PC. <br/>
 <br/>
+Open your terminal
+<br/>
 `gh repo clone daisyyedda/GoMovie`
 <br/>
 `cd gomovie-ui`
