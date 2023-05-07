@@ -5,7 +5,7 @@ Tech Stack: Docker, Go, GraphQL, PostgreSQL, React.
 ## Demo
 
 ## Run It Locally
-The assumption is you have Go and Node installed. <br/>
+The assumption is you have Go and Node installed on your PC. <br/>
 <br/>
 `gh repo clone daisyyedda/GoMovie`
 <br/>
@@ -16,9 +16,9 @@ The assumption is you have Go and Node installed. <br/>
 `npm start`
 <br/>
 then the frontend should be running on port `3000`.
-<br/>
+<br/><br/>
 Open a new terminal
-<br/> <br/>
+<br/>
 `cd ../gomovie-services`
 <br/>
 `go run ./cmd/api`
