@@ -23,7 +23,7 @@ Homepage (admin user), with add/search movies and manage catalogue features enab
 <br/><br/>
 Add/Edit movie
 <br/>
-![Screen Shot 2023-05-08 at 3 35 06 PM](https://user-images.githubusercontent.com/65566095/236916670-1ca2e47d-885f-40a9-80dc-a0fa95cabcfd.png)
+<img src="https://user-images.githubusercontent.com/65566095/236916670-1ca2e47d-885f-40a9-80dc-a0fa95cabcfd.png" width="80%" height="80%">
 
 ## How to Run
 Install Go, Docker, and Node on your PC
