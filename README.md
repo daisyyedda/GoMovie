@@ -7,7 +7,7 @@ Docker, Go, GraphQL, PostgreSQL, React.
 ## Snapshots
 Display all movies 
 <br/>
-<img src="https://user-images.githubusercontent.com/65566095/236915317-903f99da-2963-4249-96c8-2f65672c79f5.png" width=60% height=60%>
+<img src="https://user-images.githubusercontent.com/65566095/236915317-903f99da-2963-4249-96c8-2f65672c79f5.png" width=80% height=80%>
 <br/><br/>
 Display a single movie
 <br/>
