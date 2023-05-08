@@ -8,15 +8,19 @@ Docker, Go, GraphQL, PostgreSQL, React.
 Display all movies 
 <br/>
 ![Screen Shot 2023-05-08 at 3 28 57 PM](https://user-images.githubusercontent.com/65566095/236915317-903f99da-2963-4249-96c8-2f65672c79f5.png)
+<br/><br/>
 Display a single movie
 <br/>
 ![Screen Shot 2023-05-08 at 3 30 18 PM](https://user-images.githubusercontent.com/65566095/236915518-1ec6a0eb-39ce-4161-8928-0abd8750c07c.png)
+<br/><br/>
 Browse movie by genre
 <br/>
 ![Screen Shot 2023-05-08 at 3 30 32 PM](https://user-images.githubusercontent.com/65566095/236915753-0829cb97-1fe2-4129-af7c-aadb5bd8789e.png)
+<br/><br/>
 Home Page (Admin User), with add/search movies and manage catalogue features enabled
 <br/>
 ![Screen Shot 2023-05-08 at 3 32 16 PM](https://user-images.githubusercontent.com/65566095/236915950-0f03fc7a-aa29-4b2a-b8f1-8e27fd9aa02f.png)
+<br/><br/>
 Add/Edit Movie Page
 <br/>
 ![Screen Shot 2023-05-08 at 3 35 06 PM](https://user-images.githubusercontent.com/65566095/236916670-1ca2e47d-885f-40a9-80dc-a0fa95cabcfd.png)
